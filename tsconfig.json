@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "jsx": "react",
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "outDir": ".",
+    "declaration": true,
+    "declarationDir": "dts"
+  },
+  "exclude": ["node_modules", "dist"],
+  "include": ["./src/**/*.tsx", "./src/**/*.ts"]
+}
