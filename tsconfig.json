@@ -11,7 +11,8 @@
     "esModuleInterop": true,
     "outDir": ".",
     "declaration": true,
-    "declarationDir": "dts"
+    "declarationDir": "dts",
+    "allowJs": true
   },
   "exclude": ["node_modules", "dist"],
   "include": ["./src/**/*.tsx", "./src/**/*.ts"]
