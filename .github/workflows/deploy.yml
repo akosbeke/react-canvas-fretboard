@@ -1,4 +1,4 @@
-name: Deploy to Vercel and NPM
+name: Deploy to Chromatic and NPM
 
 on:
   push:
@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Install dependencies
         run: yarn
