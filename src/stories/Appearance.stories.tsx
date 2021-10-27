@@ -4,7 +4,7 @@ import {ComponentStory, ComponentMeta} from '@storybook/react'
 import {Fretboard} from '../components/Fretboard'
 
 export default {
-  title: 'Fretboard',
+  title: 'Appearance',
   component: Fretboard,
 } as ComponentMeta<typeof Fretboard>
 
@@ -13,16 +13,7 @@ const Template: ComponentStory<typeof Fretboard> = args => (
 )
 
 export const Default = Template.bind({})
-Default.args = {
-  selectedNotes: [
-    {
-      note: 'A',
-    },
-    {
-      note: 'C5',
-    },
-  ],
-}
+Default.args = {}
 
 export const NeckTypeMaple = Template.bind({})
 NeckTypeMaple.args = {
@@ -35,21 +26,27 @@ NeckTypeRosewood.args = {
 }
 
 export const DarkMode = Template.bind({})
+DarkMode.parameters = {
+  backgrounds: {default: 'dark'},
+}
 DarkMode.args = {
+  background: '#333333',
   darkMode: true,
 }
 
-export const CustomAppearance = Template.bind({})
-CustomAppearance.args = {
+export const CustomDimensions = Template.bind({})
+CustomDimensions.args = {
+  width: 1024,
+  height: 200,
   appearance: {
     desktop: {
       fontFamily:
         '"Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif',
-      labelFontSize: '16px',
-      nutWidth: 20,
-      fretWidth: 8,
-      dotRadius: 20,
-      selectedNoteRadius: 20,
+      labelFontSize: '12px',
+      nutWidth: 9,
+      fretWidth: 4,
+      dotRadius: 7,
+      selectedNoteRadius: 12,
     },
     mobile: {
       fontFamily:
@@ -61,4 +58,24 @@ CustomAppearance.args = {
       selectedNoteRadius: 18,
     },
   },
+}
+
+export const Mobile = Template.bind({})
+Mobile.parameters = {
+  viewport: {
+    defaultViewport: 'mobile2',
+  },
+}
+Mobile.args = {
+  minWidth: 600,
+}
+
+export const BackgroundAndPadding = Template.bind({})
+BackgroundAndPadding.args = {
+  background: 'lavender',
+  padding: {
+    desktop: [70, 50, 80],
+    mobile: [30, 20, 50, 40],
+  },
+  innerPadding: [20, 0, 30],
 }

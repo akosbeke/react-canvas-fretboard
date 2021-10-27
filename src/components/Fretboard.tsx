@@ -77,7 +77,7 @@ export interface FretboardProps {
   selectedNotesOct?: boolean
   displayNoteName?: boolean
   noteNameType?: NoteName
-  onFretboardClick?: null | OnFretboardClick
+  onFretboardClick?: OnFretboardClick | null
 }
 
 /**
@@ -91,15 +91,15 @@ export const Fretboard: React.FC<FretboardProps> = ({
   background = '#ffffff',
   padding: propPadding = {desktop: [], mobile: []},
   innerPadding = [15, 0, 20],
+  neckType = 'plain',
+  appearance = {desktop: {}, mobile: {}},
   numberOfFrets = 12,
   tuning = ['E2', 'A2', 'D3', 'G3', 'B3', 'E4'],
-  neckType = 'plain',
   leftHanded = false,
   showStringLabels = true,
   showFretLabels = true,
   highlightString = [],
   hightlightColor = '#00b4d2',
-  appearance = {desktop: {}, mobile: {}},
   selectedNotes = [],
   selectedNotesColor = '#00b4d2',
   selectedNotesOct = true,
@@ -141,7 +141,10 @@ export const Fretboard: React.FC<FretboardProps> = ({
     width || (windowWidth > minWidth ? windowWidth : minWidth)
 
   const config = {...defaultAppearance[device], ...appearance[device]}
-  const padding = [...defaultPadding[device], ...propPadding[device]]
+  const padding =
+    propPadding[device].length > 0
+      ? propPadding[device]
+      : defaultPadding[device]
 
   // Modify colorScheme based on theme mode
   let currentColorScheme: FretboardColorScheme
@@ -238,17 +241,17 @@ export const Fretboard: React.FC<FretboardProps> = ({
         'all',
       )
 
-      Object.keys(noteLocationsPerString).forEach(stringName => {
-        const noteLocations =
+      for (const stringName in noteLocationsPerString) {
+        const noteLocationsString =
           noteLocationsPerString[stringName as NoteWithOctave] || []
 
-        noteLocations.forEach((fret: FretboardNoteLocation) => {
+        noteLocationsString.forEach((fret: FretboardNoteLocation) => {
           noteLocations.push({
             ...fret,
             string: stringName,
           })
         })
-      })
+      }
 
       const clickedNote = noteLocations.find(
         ({button}) =>
@@ -625,7 +628,7 @@ export const Fretboard: React.FC<FretboardProps> = ({
         ref={canvasRef}
         width={finalWidth}
         height={height}
-        style={{width: '100%'}}
+        style={{width: !width ? '100%' : 'auto'}}
       />
     </>
   )
