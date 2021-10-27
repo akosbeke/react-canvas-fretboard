@@ -5,9 +5,9 @@ A powerful full-size fretboard component for creating interactive tools for guit
 # Basic Usage
 
 JavaScript:
-```js
+```jsx
 import React from 'react'
-import {Fretboard} from 'react-canvas-fretboard
+import {Fretboard} from 'react-canvas-fretboard'
 
 const App = () => (
     <Fretboard
@@ -24,9 +24,9 @@ export default App
 ```
 
 TypeScript:
-```ts
+```tsx
 import React from 'react'
-import {Fretboard} from 'react-canvas-fretboard
+import {Fretboard} from 'react-canvas-fretboard'
 
 const App: React.FC = () => (
     <Fretboard
