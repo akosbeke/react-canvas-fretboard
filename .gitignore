@@ -4,6 +4,7 @@
 # production
 /dist
 /dts
+/storybook-static
 
 # testing
 /coverage
