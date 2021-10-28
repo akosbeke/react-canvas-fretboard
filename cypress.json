@@ -1,7 +1,7 @@
 {
   "baseUrl": "http://localhost:6006",
   "integrationFolder": "cypress/e2e",
-  "viewportWidth": 1024,
+  "viewportWidth": 1280,
   "viewportHeight": 660,
   "ignoreTestFiles": ["**/__snapshots__/*", "**/__image_snapshots__/*"],
   "video": true,
