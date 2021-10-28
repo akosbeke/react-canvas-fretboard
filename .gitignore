@@ -8,6 +8,10 @@
 
 # testing
 /coverage
+/cypress/videos
+/cypress/screenshots
+/cypress/e2e/__image_snapshots__/*.actual.*
+/cypress/e2e/__image_snapshots__/*.diff.*
 
 # misc
 .DS_Store
