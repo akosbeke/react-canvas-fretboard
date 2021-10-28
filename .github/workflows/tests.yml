@@ -41,7 +41,7 @@ jobs:
       - name: E2E tests
         uses: cypress-io/github-action@v2
         with:
-          browser: chrome
+          browser: electron
           build: npm run build-storybook
           start: npm run serve-storybook
           wait-on: http://localhost:6006
