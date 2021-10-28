@@ -4,7 +4,7 @@
   "viewportWidth": 1280,
   "viewportHeight": 660,
   "ignoreTestFiles": ["**/__snapshots__/*", "**/__image_snapshots__/*"],
-  "video": true,
+  "video": false,
   "env": {
     "cypress-plugin-snapshots": {
       "imageConfig": {
