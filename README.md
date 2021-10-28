@@ -1,3 +1,4 @@
+[![Tests](https://github.com/akosbeke/react-canvas-fretboard/actions/workflows/tests.yml/badge.svg)](https://github.com/akosbeke/react-canvas-fretboard/actions/workflows/tests.yml)
 # react-canvas-fretboard
 
 A powerful full-size fretboard component for creating interactive tools for guitar or other stringed instruments.
