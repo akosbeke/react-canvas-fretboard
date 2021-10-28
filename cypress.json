@@ -3,10 +3,11 @@
   "integrationFolder": "cypress/e2e",
   "viewportWidth": 1024,
   "ignoreTestFiles": ["**/__snapshots__/*", "**/__image_snapshots__/*"],
+  "video": false,
   "env": {
     "cypress-plugin-snapshots": {
       "imageConfig": {
-        "threshold": 0.01
+        "threshold": 0.05
       }
     }
   }

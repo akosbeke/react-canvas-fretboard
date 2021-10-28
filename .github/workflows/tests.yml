@@ -44,5 +44,4 @@ jobs:
         with:
           build: npm run build-storybook
           start: npm run serve-storybook
-          config: baseUrl=http://localhost:8080,video=false
-          wait-on: http://localhost:8080
+          wait-on: http://localhost:6006
