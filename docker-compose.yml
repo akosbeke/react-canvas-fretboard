@@ -1,0 +1,14 @@
+version: '3.2'
+services:
+  storybook:
+    build: .
+
+  cypress:
+    image: "cypress/included:8.7.0"
+    depends_on:
+      - storybook
+    environment:
+      - CYPRESS_baseUrl=http://storybook:6006
+    working_dir: /e2e
+    volumes:
+      - ./:/e2e
