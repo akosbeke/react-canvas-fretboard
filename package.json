@@ -1,6 +1,6 @@
 {
   "name": "react-canvas-fretboard",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A full-featured React component built with TypeScript and canvas.",
   "repository": {
     "type": "git",
