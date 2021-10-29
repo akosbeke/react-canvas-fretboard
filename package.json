@@ -1,6 +1,6 @@
 {
   "name": "react-canvas-fretboard",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A full-featured React component built with TypeScript and canvas.",
   "repository": {
     "type": "git",
@@ -14,10 +14,13 @@
   "scripts": {
     "test": "jest --watch",
     "test:ci": "jest",
+    "e2e": "cypress open",
+    "e2e:headless": "docker-compose up --exit-code-from cypress",
     "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore",
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "serve-storybook": "yarn http-server -p 6006 storybook-static"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
@@ -28,6 +31,7 @@
     "@storybook/addon-essentials": "^6.3.12",
     "@storybook/addon-links": "^6.3.12",
     "@storybook/react": "^6.3.12",
+    "@testing-library/cypress": "^8.0.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.2",
     "@tonaljs/interval": "^4.6.5",
@@ -40,9 +44,13 @@
     "@typescript-eslint/parser": "^5.1.0",
     "babel-jest": "^27.3.1",
     "babel-loader": "^8.2.3",
+    "cypress": "^8.7.0",
+    "cypress-plugin-snapshots": "^1.4.4",
     "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-react": "^7.26.1",
+    "http-server": "^14.0.0",
     "jest": "^27.3.1",
     "jest-canvas-mock": "^2.3.1",
     "prettier": "^2.4.1",
